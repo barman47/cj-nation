@@ -52,7 +52,7 @@ router.post('/addPost', passport.authenticate('jwt', { session: false }), /*uplo
     const file = req.files.file;
     console.log(file);
 
-    file.mv(`${__dirname}../../../client/public/build/uploads/${file.name}`, err => {
+    file.mv(`${__dirname}../../../client/build/uploads/${file.name}`, err => {
         if(err){
             console.log(err);
             return res.status(500).json({ msg: 'Upload Failed.' });
