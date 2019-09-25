@@ -57,6 +57,25 @@ router.get('/video/:videoID', (req, res) => {
         .catch(err => res.status(404).json({ msg: 'Video not found' }));
 });
 
+router.get('/musics/all', (req, res) => {
+    console.log('music request');
+    Post.find({ type: 'Audio' })
+        .then(musics => {
+            if (musics.length < 1) {
+                return res.status(404).json({ msg: 'Music not found' })
+            }
+            res.json(musics);
+        })
+        .catch(err => res.status(404).json({ msg: 'Music not found' }));
+});
+
+router.get('/music/:musicID', (req, res) => {
+    console.log('music request');
+    Post.findById(req.params.musicID)
+        .then(music => res.json(music))
+        .catch(err => res.status(404).json({ msg: 'Music not found' }));
+});
+
 router.post('/addPost', passport.authenticate('jwt', { session: false }), /*upload.single('file'),*/ (req, res) => {
     const { errors, isValid } = validateAddPost(req.body);
 

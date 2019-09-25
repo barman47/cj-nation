@@ -5,29 +5,29 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import M from 'materialize-css';
 
-import { getVideos, setVideo } from '../../actions/postActions';
+import { getMusics, setVideo } from '../../actions/postActions';
 
 import isEmpty from '../../validation/is-empty';
 
-class Videos extends Component {
+class Musics extends Component {
     constructor (props) {
         super(props);
         this.state = {
             loading: false,
             message: '',
-            videos: [],
+            musics: [],
             errors: {}
         };
     }
 
     componentDidMount () {
-        this.props.getVideos();
+        this.props.getMusics();
     }
 
     UNSAFE_componentWillReceiveProps (nextProps) {
-        if (nextProps.posts.videos) {
+        if (nextProps.posts.musics) {
             this.setState({
-                videos: nextProps.posts.videos,
+                musics: nextProps.posts.musics,
                 loading: false
             });
         }
@@ -35,7 +35,7 @@ class Videos extends Component {
         if (!isEmpty(nextProps.errors)) {
             this.setState({
                 errors: nextProps.errors,
-                message: 'No Videos at this time',
+                message: 'No Musics at this time',
                 loading: false
             }, () => {
                 M.toast({
@@ -47,27 +47,27 @@ class Videos extends Component {
     }
 
     render () {
-        const { videos, message } = this.state;
-        let videosArray;
-        if (videos.length > 0) {
-            videosArray = videos.map(video => (
-                <Link key={video._id} to={`/videos/${video._id}`}>
-                    <div className="col s12 m6 l3 video hoverable">
-                        <video key={video._id} src={`/uploads/${video.url}`}></video>
-                        <h5>{video.title}</h5>
-                        <p className="truncate">{video.text}</p>
+        const { musics, message } = this.state;
+        let musicsArray;
+        if (musics.length > 0) {
+            musicsArray = musics.map(music => (
+                <Link key={music._id} to={`/musics/${music._id}`}>
+                    <div className="col s12 m6 l3 musics hoverable">
+                        <h5>{music.title}</h5>
+                        <audio controls key={music._id} src={`/uploads/${music.url}`}></audio>
+                        <p className="truncate">{music.text}</p>
                     </div>
                 </Link>
             ));
         }
         return (
             <Fragment>
-                <Helmet><title>Videos - CJ Nation Entertainment</title></Helmet>
-                <div className="videos">
-                    <h4>CJ Nation Entertainment Videos Page</h4>
+                <Helmet><title>Musics - CJ Nation Entertainment</title></Helmet>
+                <div className="musics">
+                    <h4>CJ Nation Entertainment Musics Page</h4>
                     {message !== '' ? <h5>{message}</h5> : null}
                     <div className="row">
-                        {videosArray}
+                        {musicsArray}
                     </div>
                 </div>
             </Fragment>
@@ -75,8 +75,8 @@ class Videos extends Component {
     }
 }
 
-Videos.propTypes = {
-    getVideos: PropTypes.func.isRequired
+Musics.propTypes = {
+    getMusics: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -84,4 +84,4 @@ const mapStateToProps = (state) => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps, { getVideos })(withRouter(Videos));
+export default connect(mapStateToProps, { getMusics })(withRouter(Musics));

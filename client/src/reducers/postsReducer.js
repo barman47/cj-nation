@@ -1,5 +1,7 @@
 import { 
-    ADD_COMMENT, 
+    ADD_COMMENT,
+    ADD_VIDEO_COMMENT,
+    ADD_AUDIO_COMMENT,
     GET_POSTS, 
     SET_POSTS, 
     START_POST_LOADING, 
@@ -7,17 +9,22 @@ import {
     END_POST_LOADING, 
     UPLOADED, 
     SET_VIDEOS,
-    GET_VIDEOS ,
-    SET_VIDEO
+    GET_VIDEOS,
+    SET_VIDEO,
+    SET_MUSICS,
+    SET_MUSIC
 } from '../actions/types';
 
 const initialState = {
     loading: false,
     uploaded: false,
+    comment: '',
     post: {},
     posts: [],
     video: {},
-    videos: []
+    videos: [],
+    music: {},
+    musics: []
 };
 
 export default (state = initialState, action) => {
@@ -59,6 +66,18 @@ export default (state = initialState, action) => {
                 post: action.payload
             };
 
+        case ADD_VIDEO_COMMENT:
+            return {
+                ...state,
+                video: action.payload
+            };
+
+        case ADD_AUDIO_COMMENT:
+            return {
+                ...state,
+                music: action.payload
+            };
+
         case UPLOADED:
             return {
                 ...state,
@@ -82,6 +101,20 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 video: action.payload,
+                loading: false
+            };
+
+        case SET_MUSICS:
+            return {
+                ...state,
+                musics: action.payload,
+                loading: false
+            };
+
+        case SET_MUSIC:
+            return {
+                ...state,
+                music: action.payload,
                 loading: false
             };
 

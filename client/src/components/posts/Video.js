@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import Comment from '../input-group/Comment';
 
-import { getVideo, postComment } from '../../actions/postActions';
+import { getVideo, postVideoComment } from '../../actions/postActions';
 
 class Video extends Component {
     constructor (props) {
@@ -25,6 +25,7 @@ class Video extends Component {
 
     UNSAFE_componentWillReceiveProps (nextProps) {
         if (nextProps.posts.video) {
+            console.log(nextProps);
             this.setState({
                 video: nextProps.posts.video,
                 loading: false
@@ -44,12 +45,12 @@ class Video extends Component {
             text: this.state.comment,
             user: 'Anonymous'
         };
-        this.props.postComment(this.state.video.id, comment);
+        this.props.postVideoComment(this.state.video._id, comment);
     };
 
     onChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.id
+            [e.target.name]: e.target.value
         });
     }
 
@@ -105,7 +106,7 @@ class Video extends Component {
 
 Video.propTypes = {
     getVideo: PropTypes.func.isRequired,
-    postComment: PropTypes.func.isRequired
+    postVideoComment: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -113,4 +114,4 @@ const mapStateToProps = (state) => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps, { getVideo, postComment })(Video);
+export default connect(mapStateToProps, { getVideo, postVideoComment })(Video);

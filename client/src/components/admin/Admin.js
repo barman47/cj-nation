@@ -73,7 +73,7 @@ class Admin extends Component {
             <Fragment>
                 <Helmet><title>Admin - CJ Nation</title></Helmet>
                 <h1 className="center">Admin Page</h1>
-                <div className="row" style={{ width: '40%' }}>
+                <div id="login-container" className="row">
                     <div className="col s12">
                         <ul className="tabs">
                             <li className="tab col s12 m6 l6"><a className="active" href="#login">Login</a></li>

@@ -11,6 +11,7 @@ import AllPosts from './components/posts/AllPosts'
 import Videos from './components/posts/Videos'
 import Video from './components/posts/Video'
 import Music from './components/posts/Music'
+import Musics from './components/posts/Musics'
 import Admin from './components/admin/Admin'
 import Dashboard from './components/admin/Dashboard'
 import Footer from './components/layout/Footer'
@@ -51,7 +52,8 @@ class App extends Component {
 							<Route path="/posts/:postTitle" exact component={Post} />
 							<Route path="/videos" exact component={Videos} />
 							<Route path="/videos/:videoURL" exact component={Video} />
-							<Route path="/music" exact component={Music} />
+							<Route path="/musics" exact component={Musics} />
+							<Route path="/musics/:musicURL" exact component={Music} />
 							<Switch>
 								<PrivateRoute path="/dashboard" exact component={Dashboard} />
 							</Switch>

@@ -1,5 +1,9 @@
-#tab {
+#login-container {
+    width: 40% !important;
+}
 
-    #loginForm {
+@media (max-width: 768px) {
+    #login-container {
+        width: 95% !important;
     }
 }
