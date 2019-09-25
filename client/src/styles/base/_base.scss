@@ -1,0 +1,55 @@
+body {
+    overflow-x: hidden;
+    background-color: $off-black;
+    color: $off-white;
+}
+
+nav {
+    background-color: $off-black !important;
+}
+
+div.card, div.card-content, div.card-action {
+    background-color: lighten($off-black, 5%) !important;
+}
+
+div.card-action h6 {
+    color: $off-white !important;
+}
+
+div.card-action h6:hover {
+    color: $link-color !important;
+    cursor: pointer;
+}
+
+.comment {
+    color: darken($off-white, 30%);
+    background-color: $off-black;
+    border-radius: 5px;
+    margin-bottom: $sm;
+    padding: $xs;
+}
+
+.invalid, .invalid-text {
+    color: $error-text !important;
+}
+
+textarea {
+    color: $off-white;
+    resize: none;
+}
+
+.toast-invalid {
+    background-color: $error-text !important;
+    border-radius: 5px !important;
+    color: $off-white !important;
+}
+
+.toast-valid {
+    background-color: $success-text !important;
+    border-radius: 5px !important;
+    color: $off-white !important;
+}
+
+input {
+    color: $off-white;
+}

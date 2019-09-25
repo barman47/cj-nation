@@ -1,0 +1,12 @@
+export const ADD_POST = 'ADD_POST';
+export const GET_POSTS = 'GET_POSTS';
+export const SET_POSTS = 'SET_POSTS';
+export const SET_CURRENT_POST = 'SET_CURRENT_POST';
+export const END_POST_LOADING = 'END_POST_LOADING';
+export const START_POST_LOADING = 'START_POST_LOADING';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const PASSWORD_CHANGE_SUCCESSFUL = 'PASSWORD_CHANGE_SUCCESSFUL';
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const UPLOADED = 'UPLOADED';
+export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';

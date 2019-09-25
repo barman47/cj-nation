@@ -1,0 +1,13 @@
+div.container.post-feed {
+    background-color: lighten($off-black, 10%);
+    padding: $sm 0;
+
+    h5, p, ul {
+        margin-left: $md;
+        margin-right: $md;
+    } 
+
+    video {
+        width: 100%;
+    }
+}
