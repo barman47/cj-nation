@@ -1,5 +1,4 @@
 import axios from 'axios';
-import M from 'materialize-css';
 import { 
     ADD_COMMENT, 
     ADD_AUDIO_COMMENT,

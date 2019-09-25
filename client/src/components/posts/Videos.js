@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import M from 'materialize-css';
 
-import { getVideos, setVideo } from '../../actions/postActions';
+import { getVideos } from '../../actions/postActions';
 
 import isEmpty from '../../validation/is-empty';
 

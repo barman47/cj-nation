@@ -10,16 +10,16 @@ const Footer = () => (
             <div className="col l4 offset-l2 s12">
                 <h5 className="white-text">Connect with us via</h5>
                 <ul>
-                    <li><a href="https://www.youtube.com/channel/UClIlIdnYdrceCQzvCsEWfsA?view_as=subscriber" target="_blank"><span className="mdi mdi-youtube mdi-48px"></span></a></li>
-                    <li><a href="https://facebook.com/@cj.nation.entertainment" target="_blank"><span className="mdi mdi-facebook-box mdi-48px"></span></a></li>
-                    <li><a href="https://instagram.com/carljohnsonnation?igshid=x9px38rjuf4j" target="_blank"><span className="mdi mdi-instagram mdi-48px"></span></a></li>
+                    <li><a href="https://www.youtube.com/channel/UClIlIdnYdrceCQzvCsEWfsA?view_as=subscriber" target="_blank" rel="noopener noreferrer"><span className="mdi mdi-youtube mdi-48px"></span></a></li>
+                    <li><a href="https://facebook.com/@cj.nation.entertainment" target="_blank" rel="noopener noreferrer"><span className="mdi mdi-facebook-box mdi-48px"></span></a></li>
+                    <li><a href="https://instagram.com/carljohnsonnation?igshid=x9px38rjuf4j" target="_blank" rel="noopener noreferrer"><span className="mdi mdi-instagram mdi-48px"></span></a></li>
                 </ul>
             </div>
         </div>
         <div className="footer-copyright">
             <div className="container">
                 <p>&copy; {new Date().getFullYear()} CJ Nation Entertainment</p>
-                <a className="grey-text text-lighten-4 right domstech" href="https://domstech.com">Powered by Domstech</a>
+                <a className="grey-text text-lighten-4 right domstech" href="https://domstech.com" rel="noopener noreferrer">Powered by Domstech</a>
             </div>
         </div>
     </footer>
