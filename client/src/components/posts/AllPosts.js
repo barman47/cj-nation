@@ -33,7 +33,7 @@ class AllPosts extends Component {
             <Fragment>
                 <Helmet><title>All Posts - CJ Nation</title></Helmet>
                 <main className="home-content">
-                    <h4 className="center">All Stories</h4>
+                    <h4 className="center post-title">All Stories</h4>
                     <div className="row">
                         <Posts 
                             posts={this.state.posts}

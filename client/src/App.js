@@ -9,6 +9,7 @@ import Home from './components/Home'
 import Post from './components/posts/Post'
 import AllPosts from './components/posts/AllPosts'
 import Videos from './components/posts/Videos'
+import Video from './components/posts/Video'
 import Music from './components/posts/Music'
 import Admin from './components/admin/Admin'
 import Dashboard from './components/admin/Dashboard'
@@ -48,8 +49,9 @@ class App extends Component {
 							<Route path="/posts" exact component={AllPosts} />
 							<Route path="/admin" exact component={Admin} />
 							<Route path="/posts/:postTitle" exact component={Post} />
-							<Route path="/posts/videos" exact component={Videos} />
-							<Route path="/posts/music" exact component={Music} />
+							<Route path="/videos" exact component={Videos} />
+							<Route path="/videos/:videoURL" exact component={Video} />
+							<Route path="/music" exact component={Music} />
 							<Switch>
 								<PrivateRoute path="/dashboard" exact component={Dashboard} />
 							</Switch>

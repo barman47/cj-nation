@@ -54,17 +54,16 @@ class PostItem extends Component {
                             mimeType !== 'image/png' ||
                             mimeType !== 'image/gif' ||
                             mimeType !== 'audio/mp3'
-                            ? <a href={`/uploads/${url}`} target="_blank" rel="noopener noreferrer" style={{ zIndex: 2 }} alt={title}>&nbsp;</a>
+                            ? <a className="post-title" href={`/uploads/${url}`} target="_blank" rel="noopener noreferrer" alt={title}>&nbsp;</a>
                             : null
                         }
                         {/* <a href="#" className="btn-floating halfway-fab red center"><span className="mdi mdi-account"></span></a> */}
-                        <span className="card-title">{title}</span>
                     </div>
                     <div className="card-content">
                         <p className="truncate">{text}</p>
                     </div>
                     <div className="card-action">
-                        <h6 onClick={this.handlePageChange}>{title}</h6>
+                        <h6 className="post-title" title="Click to view full post" onClick={this.handlePageChange}>{title}</h6>
                         {/* <Link </Link> */}
                     </div>
                 </div>

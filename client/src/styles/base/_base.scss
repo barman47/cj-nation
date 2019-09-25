@@ -1,29 +1,36 @@
+* {
+    font-family: $quicksand;
+}
+
 body {
     overflow-x: hidden;
-    background-color: $off-black;
+}
+
+.welcome-text {
+    background-color: rgba(238, 110, 115, .9);
     color: $off-white;
-}
-
-nav {
-    background-color: $off-black !important;
-}
-
-div.card, div.card-content, div.card-action {
-    background-color: lighten($off-black, 5%) !important;
+    margin-top: $lg;
+    padding: $sm;
 }
 
 div.card-action h6 {
-    color: $off-white !important;
+    color: $blue;
 }
 
 div.card-action h6:hover {
-    color: $link-color !important;
+    text-decoration: underline;
     cursor: pointer;
 }
 
+.post-title {
+    color: $teal;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
 .comment {
-    color: darken($off-white, 30%);
-    background-color: $off-black;
+    color: $off-black;
+    background-color: darken($off-white, 5%);
     border-radius: 5px;
     margin-bottom: $sm;
     padding: $xs;
@@ -34,8 +41,11 @@ div.card-action h6:hover {
 }
 
 textarea {
-    color: $off-white;
     resize: none;
+}
+
+button {
+    background-color: $teal;
 }
 
 .toast-invalid {
@@ -48,8 +58,4 @@ textarea {
     background-color: $success-text !important;
     border-radius: 5px !important;
     color: $off-white !important;
-}
-
-input {
-    color: $off-white;
 }

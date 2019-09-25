@@ -8,7 +8,10 @@ import {
     SET_POSTS, 
     SET_CURRENT_POST, 
     GET_ERRORS, 
-    UPLOADED 
+    UPLOADED,
+    SET_VIDEOS,
+    GET_VIDEOS,
+    SET_VIDEO
 } from './types';
 
 export const addPost = (postData) => (dispatch) => {
@@ -53,6 +56,68 @@ export const getAllPosts = () => (dispatch) => {
             });
         })
         .catch(err => console.log(err));
+};
+
+export const getVideos = () => (dispatch) => {
+    dispatch({
+        type: GET_VIDEOS
+    });
+    axios.get('/api/posts/Video')
+        .then(res => {
+            dispatch({
+                type: SET_VIDEOS,
+                payload: res.data,
+            });
+        })
+        .catch(err => {
+            try {
+                switch(err.response.status) {
+                    case 404:
+                        dispatch({
+                            type: GET_ERRORS,
+                            payload: err.response.data
+                        });
+                        break;
+
+                        default: 
+                            // dispatch({
+                            //     GET_ERRORS,
+                            //     payload: {}
+                            // });
+                            break;
+                }
+            } catch (err) {
+                dispatch({
+                    GET_ERRORS,
+                    payload: {}
+                });
+            }
+        });
+};
+
+export const getVideo = (videoId) => (dispatch) => {
+    dispatch({
+        type: GET_VIDEOS
+    });
+
+    axios.get(`/api/posts/video/${videoId}`)
+        .then(res => {
+            dispatch({
+                type: SET_VIDEO,
+                payload: res.data
+            });
+        })
+        .catch(err => {
+
+        });
+};
+
+export const setVideo = (video, history) => (dispatch) => {
+    dispatch({
+        type: SET_VIDEOS,
+        payload: video
+    });
+    history.push(`/videos/${video.id}`);
 };
 
 export const setCurrentPost = (post, history) => (dispatch) => {

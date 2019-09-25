@@ -40,6 +40,23 @@ router.get('/homepagePosts', (req, res) => {
         .catch(err => console.log(err));
 });
 
+router.get('/:postType', (req, res) => {
+    Post.find({ type: req.params.postType })
+        .then(videos => {
+            if (videos.length === 0) {
+                return res.status(404).json({ msg: 'No Videos at this time' });
+            }
+            res.json(videos)
+        })
+        .catch(err => console.log(err));
+});
+
+router.get('/video/:videoID', (req, res) => {
+    Post.findById(req.params.videoID)
+        .then(video => res.json(video))
+        .catch(err => res.status(404).json({ msg: 'Video not found' }));
+});
+
 router.post('/addPost', passport.authenticate('jwt', { session: false }), /*upload.single('file'),*/ (req, res) => {
     const { errors, isValid } = validateAddPost(req.body);
 

@@ -1,10 +1,23 @@
-import { ADD_COMMENT, GET_POSTS, SET_POSTS, START_POST_LOADING, SET_CURRENT_POST, END_POST_LOADING, UPLOADED } from '../actions/types';
+import { 
+    ADD_COMMENT, 
+    GET_POSTS, 
+    SET_POSTS, 
+    START_POST_LOADING, 
+    SET_CURRENT_POST, 
+    END_POST_LOADING, 
+    UPLOADED, 
+    SET_VIDEOS,
+    GET_VIDEOS ,
+    SET_VIDEO
+} from '../actions/types';
 
 const initialState = {
     loading: false,
     uploaded: false,
     post: {},
-    posts: []
+    posts: [],
+    video: {},
+    videos: []
 };
 
 export default (state = initialState, action) => {
@@ -50,6 +63,26 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 uploaded: action.payload.uploaded
+            };
+
+        case GET_VIDEOS:
+            return {
+                ...state,
+                loading: true
+            };
+
+        case SET_VIDEOS:
+            return {
+                ...state,
+                videos: action.payload,
+                loading: false
+            };
+
+        case SET_VIDEO:
+            return {
+                ...state,
+                video: action.payload,
+                loading: false
             };
 
         default:

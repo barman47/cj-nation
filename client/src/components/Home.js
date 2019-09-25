@@ -46,8 +46,12 @@ class Home extends Component {
                     <div className="banner">
                         
                     </div>
-                    <h3>Welcome to CJ Nation whatever</h3>
+                    <div className="welcome-text">
+                        <h3>Welcome to CJ Nation Entertainment</h3>
+                        <h6>Subheading Lorem ipsum dolor sit amet.</h6>
+                    </div>
                     <div className="row">
+                        <h4 style={{ color: '#ee6e73', textAlign: 'center' }}>Recent Stories</h4>
                         <Posts 
                             posts={this.state.posts}
                         />

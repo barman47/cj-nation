@@ -76,7 +76,7 @@ class Post extends Component {
                 <Helmet><title>{post.title ? post.title : ''} - CJ Nation</title></Helmet>
                 <div className="container post-feed">
                     <h5>Posted on {date}</h5>
-                    <h4 className="center">{post.title}</h4>
+                    <h4 className="center post-title">{post.title}</h4>
                     {post.mimeType === 'audio/mp3' ? <audio autoPlay controls src={`/uploads/${post.url}`}></audio> : null}
                         {post.mimeType === 'video/mp4' ? <video autoPlay controls src={`/uploads/${post.url}`}></video> : null}
                         {post.mimeType === 'image/jpeg' ? <img className="post-image materialboxed responsive-img" src={`/uploads/${post.url}`} alt=""/> : null}
@@ -103,7 +103,7 @@ class Post extends Component {
                                 onChange={this.onChange}
                                 value={comment}
                             />
-                            <button type="submit">Add Comment</button>
+                            <button className="btn teal" type="submit">Add Comment</button>
                         </div>
                     </form>
                     <ul>

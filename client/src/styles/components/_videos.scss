@@ -1,0 +1,29 @@
+.videos {
+    h4, h5 {
+        text-align: center;
+        color: $teal;
+    }
+
+    .video video {
+        width: 100%;
+    }
+
+    .video {
+        cursor: pointer;
+    }
+
+    p:last-child {
+        color: $off-black;
+    }
+
+    // a.video-link {
+    //     color: $teal;
+    //     font-weight: bold;
+    //     text-transform: uppercase;
+    // }
+
+    // a.video-link:hover {
+    //     color: $link-color;
+    //     text-decoration: underline;
+    // }
+}
